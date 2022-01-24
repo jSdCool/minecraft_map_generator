@@ -360,7 +360,7 @@
 	"blue": 147
   },
   {
-	"block": "minecraft:glow_lichen",
+	"block": "minecraft:glow_lichen[down=true]",
 	"red": 127,
 	"green": 167,
 	"blue": 150	
