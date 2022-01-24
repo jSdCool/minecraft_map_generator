@@ -10,6 +10,8 @@ ArrayList<Block> blocks=new ArrayList<Block>();
 int[][] map=new int[128][128];
 PImage source;
 boolean validImage=false,mapReady=false;
+String message="";
+int msgtmr=0;
 
 void draw(){
  background(230);
@@ -41,6 +43,11 @@ void draw(){
     }
    }
  }
+ if(msgtmr>millis()){
+  fill(0);
+  textSize(50);
+  text(message,width/2,600);
+ }
 }
 
 
@@ -56,6 +63,8 @@ void fileSelected(File selection) {
     source=loadImage(selection.getAbsolutePath());
     source.resize(128,128);
     }catch(Exception e){
+      message="failed to load image";
+ msgtmr=millis()+1000;
      return ;
     }
     validImage=true;
@@ -110,5 +119,11 @@ if(mapReady){
    }
    output.flush(); 
   output.close();
+ }else{
+  message="exported failed";
+ msgtmr=millis()+1000;
+ return;
  }
+ message="exported successfuly";
+ msgtmr=millis()+1000;
 }
