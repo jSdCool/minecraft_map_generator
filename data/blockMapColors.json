@@ -1,0 +1,369 @@
+[
+  {
+	"block": "minecraft:grass_block",
+	"red": 127,
+	"green": 178,
+	"blue": 56
+  },
+  {
+	"block": "minecraft:sandstone",
+	"red": 247,
+	"green": 233,
+	"blue": 163
+  },
+  {
+	"block": "minecraft:mushroom_stem",
+	"red": 199,
+	"green": 199,
+	"blue": 199
+  },
+  {
+	"block": "minecraft:redstone_block",
+	"red": 255,
+	"green": 0,
+	"blue": 0
+  },
+  {
+	"block": "minecraft:ice",
+	"red": 160,
+	"green": 160,
+	"blue": 255
+  },
+  {
+	"block": "minecraft:iron_block",
+	"red": 167,
+	"green": 167,
+	"blue": 167
+  },
+  {
+	"block": "minecraft:oak_leaves",
+	"red": 0,
+	"green": 124,
+	"blue": 0
+  },
+  {
+	"block": "minecraft:white_wool",
+	"red": 255,
+	"green": 255,
+	"blue": 255
+  },
+  {
+	"block": "minecraft:clay",
+	"red": 164,
+	"green": 168,
+	"blue": 184
+  },
+  {
+	"block": "minecraft:dirt",
+	"red": 151,
+	"green": 109,
+	"blue": 77
+  },
+  {
+	"block": "minecraft:stone",
+	"red": 112,
+	"green": 112,
+	"blue": 112
+  },
+  {
+	"block": "minecraft:water",
+	"red": 64,
+	"green": 64,
+	"blue": 255
+  },
+  {
+	"block": "minecraft:oak_planks",
+	"red": 143,
+	"green": 119,
+	"blue": 72
+  },
+  {
+	"block": "minecraft:diorite",
+	"red": 255,
+	"green": 252,
+	"blue": 245
+  },
+  {
+	"block": "minecraft:orange_wool",
+	"red": 216,
+	"green": 127,
+	"blue": 51
+  },
+  {
+	"block": "minecraft:magenta_wool",
+	"red": 178,
+	"green": 76,
+	"blue": 216
+  },
+  {
+	"block": "minecraft:light_blue_wool",
+	"red": 102,
+	"green": 153,
+	"blue": 216
+  },
+  {
+	"block": "minecraft:yellow_wool",
+	"red": 229,
+	"green": 229,
+	"blue": 51
+  },
+  {
+	"block": "minecraft:lime_wool",
+	"red": 127,
+	"green": 204,
+	"blue": 25
+  },
+  {
+	"block": "minecraft:pink_wool",
+	"red": 242,
+	"green": 127,
+	"blue": 165 
+  },
+  {
+	"block": "minecraft:gray_wool",
+	"red": 76,
+	"green": 76,
+	"blue": 76
+  },
+  {
+	"block": "minecraft:light_gray_wool",
+	"red": 153,
+	"green": 153,
+	"blue": 153
+  },
+  {
+	"block": "minecraft:cyan_wool",
+	"red": 76,
+	"green": 127,
+	"blue": 153
+  },
+  {
+	"block": "minecraft:purple_wool",
+	"red": 127,
+	"green": 63,
+	"blue": 178
+  },
+  {
+	"block": "minecraft:blue_wool",
+	"red": 51,
+	"green": 76,
+	"blue": 178
+  },
+  {
+	"block": "minecraft:brown_wool",
+	"red": 102,
+	"green": 76,
+	"blue": 51
+  },
+  {
+	"block": "minecraft:green_wool",
+	"red": 102,
+	"green": 127,
+	"blue": 51
+  },
+  {
+	"block": "minecraft:red_wool",
+	"red": 153,
+	"green": 51,
+	"blue": 51
+  },
+  {
+	"block": "minecraft:black_wool",
+	"red": 25,
+	"green": 25,
+	"blue": 25
+  },
+  {
+	"block": "minecraft:gold_block",
+	"red": 250,
+	"green": 238,
+	"blue": 77
+  },
+  {
+	"block": "minecraft:prismarine_bricks",
+	"red": 92,
+	"green": 219,
+	"blue": 213
+  },
+  {
+	"block": "minecraft:lapis_block",
+	"red": 74,
+	"green": 128,
+	"blue": 255
+  },
+  {
+	"block": "minecraft:emerald_block",
+	"red": 0,
+	"green": 217,
+	"blue": 58
+  },
+  {
+	"block": "minecraft:podzol",
+	"red": 129,
+	"green": 86,
+	"blue": 49
+  },
+  {
+	"block": "minecraft:netherrack",
+	"red": 112,
+	"green": 2,
+	"blue": 0
+  },
+  {
+	"block": "minecraft:white_terracotta",
+	"red": 209,
+	"green": 177,
+	"blue": 161
+  },
+  {
+	"block": "minecraft:orange_terracotta",
+	"red": 159,
+	"green": 82,
+	"blue": 36
+  },
+  {
+	"block": "minecraft:magenta_terracotta",
+	"red": 149,
+	"green": 87,
+	"blue": 108
+  },
+  {
+	"block": "minecraft:light_blue_terracotta",
+	"red": 112,
+	"green": 108,
+	"blue": 138
+  },
+  {
+	"block": "minecraft:yellow_terracotta",
+	"red": 186,
+	"green": 133,
+	"blue": 36
+  },
+  {
+	"block": "minecraft:lime_terracotta",
+	"red": 103,
+	"green": 117,
+	"blue": 53
+  },
+  {
+	"block": "minecraft:pink_terracotta",
+	"red": 160,
+	"green": 77,
+	"blue": 78
+  },
+  {
+	"block": "minecraft:gray_terracotta",
+	"red": 57,
+	"green": 41,
+	"blue": 35
+  },
+  {
+	"block": "minecraft:light_gray_terracotta",
+	"red": 135,
+	"green": 107,
+	"blue": 98
+  },
+  {
+	"block": "minecraft:cyan_terracotta",
+	"red": 87,
+	"green": 92,
+	"blue": 92
+  },
+  {
+	"block": "minecraft:purple_terracotta",
+	"red": 122,
+	"green": 73,
+	"blue": 88
+  },
+  {
+	"block": "minecraft:blue_terracotta",
+	"red": 76,
+	"green": 62,
+	"blue": 92
+  },
+  {
+	"block": "minecraft:brown_terracotta",
+	"red": 76,
+	"green": 50,
+	"blue": 35
+  },
+  {
+	"block": "minecraft:green_terracotta",
+	"red": 76,
+	"green": 82,
+	"blue": 42
+  },
+  {
+	"block": "minecraft:red_terracotta",
+	"red": 142,
+	"green": 60,
+	"blue": 46
+  },
+  {
+	"block": "minecraft:black_terracotta",
+	"red": 37,
+	"green": 22,
+	"blue": 16
+  },
+  {
+	"block": "minecraft:crimson_nylium",
+	"red": 189,
+	"green": 48,
+	"blue": 49
+  },
+  {
+	"block": "minecraft:crimson_planks",
+	"red": 148,
+	"green": 63,
+	"blue": 97
+  },
+  {
+	"block": "minecraft:crimson_hyphae",
+	"red": 92,
+	"green": 25,
+	"blue": 29
+  },
+  {
+	"block": "minecraft:warped_nylium",
+	"red": 22,
+	"green": 126,
+	"blue": 134
+  },
+  {
+	"block": "minecraft:warped_planks",
+	"red": 58,
+	"green": 142,
+	"blue": 140
+  },
+  {
+	"block": "minecraft:warped_hyphae",
+	"red": 86,
+	"green": 44,
+	"blue": 62
+  },
+  {
+	"block": "minecraft:warped_wart_block",
+	"red": 20,
+	"green": 180,
+	"blue": 133
+  },
+  {
+	"block": "minecraft:deepslate",
+	"red": 100,
+	"green": 100,
+	"blue": 100
+  },
+  {
+	"block": "minecraft:raw_iron_block",
+	"red": 216,
+	"green": 175,
+	"blue": 147
+  },
+  {
+	"block": "minecraft:glow_lichen",
+	"red": 127,
+	"green": 167,
+	"blue": 150	
+  }
+  
+]
