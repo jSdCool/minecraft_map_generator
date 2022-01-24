@@ -1,15 +1,35 @@
 class Block{
  String name;
+ int vertadjust;
  public float[] rgb=new float[3];
- Block(JSONObject file){
+ Block(JSONObject file,int verticlaOffset){
+   vertadjust=verticlaOffset;
    name=file.getString("block");
    rgb[0]=file.getFloat("red");
    rgb[1]=file.getFloat("green");
    rgb[2]=file.getFloat("blue");
+   switch(verticlaOffset){
+    case 1:
+    rgb[0]*=1;
+   rgb[1]*=1;
+   rgb[2]*=1;
+    break;
+    case 0:
+    rgb[0]*=0.86;
+   rgb[1]*=0.86;
+   rgb[2]*=0.86;
+    break;
+    case -1:
+    rgb[0]*=0.71;
+   rgb[1]*=0.71;
+   rgb[2]*=0.71;
+    break;
+   }
  }
  
- String export(int x,int y,int z){
-  return "setblock ~"+x+" ~"+y+" ~"+z+" "+name; 
+ String export(int x,int z){
+  curheight+=vertadjust;
+  return "setblock ~"+x+" ~"+curheight+" ~"+z+" "+name; 
   
  }
  
@@ -29,5 +49,8 @@ class Block{
  
  String toString(){
   return name; 
+ }
+ void calcHeight(){
+   avgheight+=vertadjust;
  }
 }
