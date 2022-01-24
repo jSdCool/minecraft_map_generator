@@ -8,9 +8,13 @@ class Block{
    rgb[2]=file.getFloat("blue");
  }
  
- String export(int x,int y, int z){
+ String export(int x,int y,int z){
+   println(z);
   return "setblock ~"+x+" ~"+y+" ~"+z+" "+name; 
+  
  }
+ 
+ 
  float[] deltaValues(float r,float g, float b){
   float out[]=new float[3];
   out[0]=abs(rgb[0]-r);

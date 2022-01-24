@@ -26,6 +26,11 @@ void draw(){
  textAlign(CENTER,CENTER);
  textSize(25);
  text("load image",150,425);
+ fill(200);
+ rect(50,500,200,50);
+ fill(0);
+ textSize(22);
+ text("export as mcfunction",150,525);
  strokeWeight(0);
  if(mapReady){
    for(int i=0;i<map.length;i++){
@@ -64,6 +69,9 @@ void mouseClicked(){
     if(mouseX>=50&&mouseX<=250&&mouseY>=400&&mouseY<=450){
       selectInput("select image:", "fileSelected");
     }
+    if(mouseX>=50&&mouseX<=250&&mouseY>=500&&mouseY<=550){
+      export();
+    }
   }
 }
 
@@ -76,12 +84,6 @@ void determinemap(){
 }
 
 int bestBlock(int pixle){
- // print(pixle+" ");
- //pixle-=16777215;
- //int red=pixle/(256*256);
- //pixle-=red*256*256;
- //int green =pixle/256;
- //int blue=pixle-green*256;
  float red=red(pixle),green=green(pixle),blue=blue(pixle);
  float lowestDelta=100000;
  int index=-1;
@@ -93,6 +95,20 @@ int bestBlock(int pixle){
      index=i;
    }
  }
- println(" "+lowestDelta);
   return index;
+}
+
+void export(){
+    
+if(mapReady){
+  PrintWriter output= createWriter("map.mcfunction");
+   for(int x=0;x<map.length;x++){
+    for(int z=0;z<map[x].length;z++){
+      String cmd=blocks.get(map[x][z]).export(x,0,z);
+      output.println(cmd);
+    }
+   }
+   output.flush(); 
+  output.close();
+ }
 }
