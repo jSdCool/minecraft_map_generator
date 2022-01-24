@@ -9,7 +9,6 @@ class Block{
  }
  
  String export(int x,int y,int z){
-   println(z);
   return "setblock ~"+x+" ~"+y+" ~"+z+" "+name; 
   
  }
