@@ -17,7 +17,7 @@ int[][] map=new int[128][128];
 PImage source;
 boolean validImage=false, mapReady=false, extendedColorRange=true;
 String message="";
-int msgtmr=0, curheight=0, avgheight=0;
+int msgtmr=0, curheight=0, avgheight=0,aproximationMode=1;
 
 void draw() {
   background(230);
@@ -43,6 +43,10 @@ void draw() {
   rect(800,100,300,50);
   fill(0);
   text("extended color mode: "+extendedColorRange,950,125);
+  fill(200);
+  rect(800,200,300,50);
+  fill(0);
+  text("aproximation mode: "+aproximationMode,950,225);
   strokeWeight(0);
   if (mapReady) {
     for (int i=0; i<map.length; i++) {
@@ -107,6 +111,13 @@ void mouseClicked() {
       mapReady=false;
       determinemap();
     }
+    if(mouseX>=800&&mouseX<=1200&&mouseY>=200&&mouseY<=250){
+      aproximationMode++;
+      if(aproximationMode==5)
+      aproximationMode=1;
+      mapReady=false;
+      determinemap();
+    }
   }
 }
 
@@ -134,7 +145,7 @@ int bestBlock(int pixle) {
   if (extendedColorRange) {
     for (int i=0; i<moreBlocks.size(); i++) {
       float[] delts = moreBlocks.get(i).deltaValues(red, green, blue);
-      float delta = (delts[0]+delts[1]+delts[2])/3;
+      float delta = aproxamateColor(delts);
       if (delta<lowestDelta) {
         lowestDelta=delta;
         index=i+62;
@@ -187,4 +198,19 @@ void export() {
   }
   message="exported successfuly";
   msgtmr=millis()+1000;
+}
+
+float aproxamateColor(float[] deltas){
+  switch(aproximationMode){
+    case 1:
+    return(deltas[0]+deltas[1]+deltas[2])/3;
+    case 2:
+    return (float)Math.sqrt(deltas[0]*deltas[0]+deltas[1]*deltas[1]+deltas[2]*deltas[2]);
+    case 3:
+    return (float)Math.pow(Math.pow(deltas[0],3)+Math.pow(deltas[1],3)+Math.pow(deltas[2],3),1/3.0);
+    case 4:
+    return (float)Math.pow(Math.pow(deltas[0],6)+Math.pow(deltas[1],6)+Math.pow(deltas[2],6),1/6.0);
+    
+  }
+  return 1000000000;
 }
