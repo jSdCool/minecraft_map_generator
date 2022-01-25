@@ -166,6 +166,7 @@ void export() {
         avgheight=abs(min);
         curheight=avgheight;
       }
+      output.println("setblock ~"+x+" ~"+curheight+" ~-1 minecraft:stone");
       for (int z=0; z<map[x].length; z++) {
         int indx=map[x][z];
         String cmd;
