@@ -43,10 +43,10 @@ void draw() {
   rect(800,100,300,50);
   fill(0);
   text("extended color mode: "+extendedColorRange,950,125);
-  fill(200);
-  rect(800,200,300,50);
-  fill(0);
-  text("aproximation mode: "+aproximationMode,950,225);
+  //fill(200);
+  //rect(800,200,300,50);
+  //fill(0);
+  //text("aproximation mode: "+aproximationMode,950,225);
   strokeWeight(0);
   if (mapReady) {
     for (int i=0; i<map.length; i++) {
@@ -111,13 +111,13 @@ void mouseClicked() {
       mapReady=false;
       determinemap();
     }
-    if(mouseX>=800&&mouseX<=1200&&mouseY>=200&&mouseY<=250){
-      aproximationMode++;
-      if(aproximationMode==5)
-      aproximationMode=1;
-      mapReady=false;
-      determinemap();
-    }
+    //if(mouseX>=800&&mouseX<=1200&&mouseY>=200&&mouseY<=250){
+    //  aproximationMode++;
+    //  if(aproximationMode==5)
+    //  aproximationMode=1;
+    //  mapReady=false;
+    //  determinemap();
+    //}
   }
 }
 
