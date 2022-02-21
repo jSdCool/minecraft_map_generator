@@ -16,13 +16,13 @@ ArrayList<Block> blocks=new ArrayList<Block>(), moreBlocks=new ArrayList<Block>(
 int[][] map=new int[128][128];
 PImage source;
 boolean validImage=false, mapReady=false, extendedColorRange=true;
-String message="";
-int msgtmr=0, curheight=0, avgheight=0,aproximationMode=1;
+String message="",mapS="1X1";
+int msgtmr=0, curheight=0, avgheight=0,aproximationMode=1,mapSize=128,layout=1;
 
 void draw() {
   background(230);
   fill(0);
-  rect(100, 100, 128, 128);
+  rect(100, 100, mapSize, mapSize);
   if (validImage) {
     image(source, 100, 100);
   }
@@ -40,15 +40,22 @@ void draw() {
   textSize(22);
   text("export as mcfunction", 150, 525);
   fill(200);
-  rect(800,100,300,50);
+  rect(800+120,100,300,50);
   fill(0);
-  text("extended color mode: "+extendedColorRange,950,125);
-  //fill(200);
-  //rect(800,200,300,50);
-  //fill(0);
-  //text("aproximation mode: "+aproximationMode,950,225);
+  text("extended color mode: "+extendedColorRange,950+120,125);
+  fill(200);
+  rect(800+120,200,300,50);
+  fill(0);
+  text("map size: "+mapS,950+120,225);
   strokeWeight(0);
   if (mapReady) {
+    int pw=3;
+    if(layout==1){
+       pw=3; 
+      }
+      if(layout==2){
+       pw=2; 
+      }
     for (int i=0; i<map.length; i++) {
       for (int j=0; j<map[i].length; j++) {
         int indx=map[i][j];
@@ -59,7 +66,7 @@ void draw() {
           col=blocks.get(indx).getColor();
         }
         fill(col);
-        rect(i*3+400, j*3+100, 3, 3);
+        rect(i*pw+400, j*pw+100, pw, pw);
       }
     }
   }
@@ -81,7 +88,7 @@ void fileSelected(File selection) {
     println("User selected " + selection.getAbsolutePath());
     try {
       source=loadImage(selection.getAbsolutePath());
-      source.resize(128, 128);
+      source.resize(mapSize, mapSize);
     }
     catch(Exception e) {
       message="failed to load image";
@@ -102,7 +109,7 @@ void mouseClicked() {
     if (mouseX>=50&&mouseX<=250&&mouseY>=500&&mouseY<=550) {
       export();
     }
-    if (mouseX>=800&&mouseX<=1200&&mouseY>=100&&mouseY<=150) {
+    if (mouseX>=800+120&&mouseX<=1200+120&&mouseY>=100&&mouseY<=150) {
       if(extendedColorRange){
         extendedColorRange=false;
       }else{
@@ -111,19 +118,33 @@ void mouseClicked() {
       mapReady=false;
       determinemap();
     }
-    //if(mouseX>=800&&mouseX<=1200&&mouseY>=200&&mouseY<=250){
-    //  aproximationMode++;
-    //  if(aproximationMode==5)
-    //  aproximationMode=1;
-    //  mapReady=false;
-    //  determinemap();
-    //}
+    if(mouseX>=800+120&&mouseX<=1200+120&&mouseY>=200&&mouseY<=250){
+      layout++;
+      if(layout==3){
+       layout=1; 
+      }
+      if(layout==1){
+       mapSize=128; 
+       mapS="1X1";
+      }
+      if(layout==2){
+       mapSize=256;
+       mapS="2X2";
+      }
+      map=new int[mapSize][mapSize];
+      if(source!=null){
+      source.resize(mapSize,mapSize);
+      
+      mapReady=false;
+      determinemap();
+      }
+    }
   }
 }
 
 void determinemap() {
   for (int i=0; i<source.pixels.length; i++) {
-    int x=i%128, y=i/128;
+    int x=i%mapSize, y=i/mapSize;
     map[x][y]=bestBlock(source.pixels[i]);
   }
   mapReady=true;
