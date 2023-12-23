@@ -166,7 +166,7 @@ int bestBlock(int pixle) {
   if (extendedColorRange) {
     for (int i=0; i<moreBlocks.size(); i++) {
       float[] delts = moreBlocks.get(i).deltaValues(red, green, blue);
-      float delta = aproxamateColor(delts);
+      float delta = aproxamateColor(delts,(int)moreBlocks.get(i).rgb[0],(int)red);
       if (delta<lowestDelta) {
         lowestDelta=delta;
         index=i+62;
@@ -221,7 +221,7 @@ void export() {
   msgtmr=millis()+1000;
 }
 
-float aproxamateColor(float[] deltas){
+float aproxamateColor(float[] deltas,int rb,int rp){
   switch(aproximationMode){
     case 1:
     return(deltas[0]+deltas[1]+deltas[2])/3;
@@ -231,6 +231,9 @@ float aproxamateColor(float[] deltas){
     return (float)Math.pow(Math.pow(deltas[0],3)+Math.pow(deltas[1],3)+Math.pow(deltas[2],3),1/3.0);
     case 4:
     return (float)Math.pow(Math.pow(deltas[0],6)+Math.pow(deltas[1],6)+Math.pow(deltas[2],6),1/6.0);
+    case 5: 
+    return (float) sqrt((2+(0.5*(rb+rp)))*pow(deltas[0],2)+4*pow(deltas[1],2)+(2+(255-(0.5*(rb+rp))/256))*pow(deltas[2],2));
+
     
   }
   return 1000000000;
